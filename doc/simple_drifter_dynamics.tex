@@ -1,0 +1,125 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{setspace}
+
+\begin{document}
+
+\doublespacing
+
+\section{Simple drifter dynamics}
+
+In absence of ambient flow, a submerged drogue is forced by 
+wave-induced velocities relative to the drogue motion.
+For a monochromatic wave of mild slope and small amplitude $a$,
+water surface has a shape $\eta = acos{(kx - \omega t)}$, 
+and associated velocities:
+
+\begin{equation}
+u(x,z,t) = a \omega e^{kz} cos{(kx-\omega t)}
+\end{equation}
+
+\begin{equation}
+w(x,z,t) = a \omega e^{kz} sin{(kx-\omega t)}
+\end{equation}
+$\omega$ is angular frequency; $k$ is wavenumber.
+The above is true in deep water. For water of arbitrary depth $d$,
+$e^{kz}$ is replaced with $cosh(k(z+d))/sinh(kd)$.
+
+The acceleration of water particles induced by the pressure gradient
+due to the surface slope is then:
+
+\begin{equation}
+a_x(x,z,t) = \dfrac{du}{dt} = a \omega^2 e^{kz} sin{(kx-\omega t)}
+\end{equation}
+
+\begin{equation}
+a_z(x,z,t) = \dfrac{dw}{dt} = -a \omega^2 e^{kz} cos{(kx-\omega t)}
+\end{equation}
+
+The drag force induced by the flow on a submerged object such as drifter drogue
+can be appoximated as:
+
+\begin{equation}
+F_d = \dfrac{1}{2} \rho C_D \mathbf{u}_{rel}^2 A 
+\end{equation}
+where $\rho$ is water density; $C_D$ is drag coefficient of the drogue;
+$\mathbf{u}_{rel}$ is the velocity of the flow relative to the drogue 
+and it can be of either sign;
+$A$ is the suface area perpendicular to $\mathbf{u}_{rel}$.
+
+Because the wave-induced velocity field is strongly sheared near the surface
+where the drifter is, a vertical integral of the velocity is considered to be 
+acting on the drogue:
+
+\begin{equation}
+u = \dfrac{1}{L} \int_{z_D-0.5L}^{z_D+0.5L} u\ dz
+= \dfrac{a \omega}{kL} \left( e^{k(z_D+0.5L)} - e^{k(z_D-0.5L)} \right)
+cos{(kx-\omega t)}
+\end{equation}
+where $L$ is the drogue height and $z_D$ is the depth of of the drogue center.
+
+If the drogue of surface area $A$ has some tilt $\phi$, which corresponds
+to the deflection of its vertical axis away from $z$-axis, then the 
+forces acting on the drogue in $x$ and $z$ are:
+
+\begin{equation}
+F_x = sgn(\mathbf{u}_{rel}) \dfrac{1}{2} \rho C_D \mathbf{u}_{rel}^2 A cos{\phi}
+\label{eq_Fx}
+\end{equation}
+
+\begin{equation}
+F_z = sgn(\mathbf{w}_{rel}) \dfrac{1}{2} \rho C_D \mathbf{w}_{rel}^2 A sin{\phi}
+\label{eq_Fz}
+\end{equation}
+The tilt $\phi$ is positive when the drogue is tilted in the forward direction
+of the wave, so $F_z$ vanishes if the drogue is perfectly vertical. 
+
+A tilted drogue also projects some of the horizontal force into the vertical
+and vice versa, so in fact the force experienced by the drogue is:
+
+\begin{equation}
+F_{dx} = F_x cos{\phi} -  F_z sin{\phi}
+\label{eq_Fdx}
+\end{equation}
+
+\begin{equation}
+F_{dz} = -F_x sin{\phi} + F_z cos{\phi}
+\label{eq_Fdz}
+\end{equation}
+
+Combine equations (\ref{eq_Fx})-(\ref{eq_Fdz}) to obtain:
+
+\begin{equation}
+F_{dx} = \dfrac{1}{2} \rho C_D A 
+\left[
+ sgn(u_{rel}) \mathbf{u}_{rel}^2 cos^2{\phi} 
+-sgn(w_{rel}) \mathbf{w}_{rel}^2 sin^2{\phi}
+\right]
+\end{equation}
+
+\begin{equation}
+F_{dz} = \dfrac{1}{2} \rho C_D A 
+\left[
+-sgn(u_{rel}) \mathbf{u}_{rel}^2 
++sgn(w_{rel}) \mathbf{w}_{rel}^2
+\right]
+sin{\phi} cos{\phi}
+\end{equation}
+
+Assumptions made:
+
+\begin{enumerate}
+
+\item Linear wave theory holds;
+
+\item Force on an object can be approximated using drag coefficient;
+
+\item Drifter drogue does not disturb the flow;
+
+\end{enumerate}
+
+\end{document}
+
