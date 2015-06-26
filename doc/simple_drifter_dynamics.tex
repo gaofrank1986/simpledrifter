@@ -43,14 +43,18 @@ The drag force induced by the flow on a submerged object such as drifter drogue
 can be appoximated as:
 
 \begin{equation}
-F_d = \dfrac{1}{2} \rho C_D \mathbf{u}_{rel}^2 A 
+F_d(x,z,t) = \dfrac{1}{2} \rho C_D \mathbf{u}_{rel}^2(x,z,t) A 
 \end{equation}
 where $\rho$ is water density; $C_D$ is drag coefficient of the drogue;
 $\mathbf{u}_{rel}$ is the velocity of the flow relative to the drogue 
 and it can be of either sign;
 $A$ is the suface area perpendicular to $\mathbf{u}_{rel}$.
+Here, $(x,z,t)$ refers to the position of drifter in time and space.
+Because of wave phase evolution in time, the water acceleration due 
+to pressure gradient from the surface slope is embedded in 
+$\mathbf{u}_{rel}^2(x,z,t)$.
 
-Because the wave-induced velocity field is strongly sheared near the surface
+Since the wave-induced velocity field is strongly sheared near the surface
 where the drifter is, a vertical integral of the velocity is considered to be 
 acting on the drogue:
 
