@@ -1,4 +1,4 @@
-* simpledrifter.py
+### simpledrifter.py
 
 A small Python library for simulating the drift of 
 an object under a monochromatic water wave.
