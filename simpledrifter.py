@@ -59,8 +59,8 @@ class Drifter(object):
         self.angvel = np.array([0])
 
         # Force acting on the drifter
-        self.F_x = np.array([])
-        self.F_z = np.array([])
+        self.F_x = np.array([0])
+        self.F_z = np.array([0])
 
     def advect(self,u,w,dt,a,k,rho=1E3):
         """
